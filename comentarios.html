@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Comentarios - Lavandería La Barranca</title>
-<link rel="icon" href="Recursos/LogoLavanderia.png" type="image/x-icon" />
-<link rel="stylesheet" href="CSS/style.css" />
-<script src="JS/script.js" defer></script>
-<style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comentarios - Lavandería La Barranca</title>
+    <link rel="icon" href="Recursos/LogoLavanderia.png" type="image/x-icon" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script src="JS/script.js" defer></script>
+    <style>
     .contenedor-comentarios {
         max-width: 800px;
         margin: 6rem auto;
@@ -111,6 +111,12 @@
     .nuevo-comentario-form button:hover {
         background-color: #3752c8;
     }
+    /* Ocultar el botón de menú en escritorio */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
 </style>
 </head>
 <body>
@@ -131,8 +137,7 @@
         <a href="contacto.html" class="navbar-cta">
             <img
                 src="https://placehold.co/200x50/007bff/ffffff?text=Cotiza+Tu+Servicio"
-                alt="Cotiza tu servicio"
-            />
+                alt="Cotiza tu servicio"/>
         </a>
     </div>
 </header>
