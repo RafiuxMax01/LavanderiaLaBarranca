@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Lavandería La Barranca</title>
+    <link rel="icon" href="../Recursos/LogoLavanderia.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="../JS/script.js" defer></script>
+<style>
+    /* Estilos generales */
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f5f5f5;
+        background-image: url('https://example.com/fondo-textura.jpg');
+        background-size: cover;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #ffffff;
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: #333;
+        padding: 10px 15px;
+        font-weight: bold;
+    }
+
+    .nav-link.active {
+        color: #007bff;
+        text-decoration: underline;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #007bff;
+        color: white;
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://example.com/fondo-hero.jpg');
+    }
+
+    h1 {
+        font-family: 'Pacifico', cursive;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .bold-text {
+        font-weight: bold;
+    }
+
+    .italic-text {
+        font-style: italic;
+    }
+
+    .underlined-text {
+        text-decoration: underline;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .text-justify {
+        text-align: justify;
+    }
+
+    .text-blue {
+        color: #007bff;
+    }
+
+    .text-large {
+        font-size: 1.5rem;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Estilos móviles */
+    @media (max-width: 768px) {
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: white;
+            width: 100%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .nav-menu.show {
+            display: flex;
+        }
+
+        .menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    /* Ocultar el botón de menú en escritorio */
+    @media (min-width: 769px) {
+        .menu-toggle {
+            display: none;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="../Recursos/LogoLavanderia.png" alt="Logo Lavandería La Barranca">
+            </a>
+            <button class="menu-toggle">☰</button>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="servicios.html" class="nav-link">Nuestros Servicios</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+                <a href="comentarios.html" class="nav-link">Comentarios</a>
+            </nav>
+            <a href="contacto.html" class="navbar-cta">
+                <img src="https://placehold.co/200x50/007bff/ffffff?text=Cotiza+Tu+Servicio" 
+                alt="Cotiza tu servicio">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Lavandería La Barranca</h1>
+            <p class="text-large">¡Soluciones en el <span class="bold-text">Lavado De Ropa</span>, <span class="italic-text">Edredones</span>, <span class="underlined-text">Calzado</span> Y más!</p>
+        </section>
+
+        <section class="text-center">
+            <h2 class="text-blue">Nuestros Servicios</h2>
+            <p class="text-justify">Ofrecemos una amplia gama de servicios de lavandería para satisfacer todas tus necesidades. Desde lavado básico hasta tratamientos especiales para prendas delicadas.</p>
+            
+        </section>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61557270535837" target="_blank">
+                <img src="https://placehold.co/50x50/1877f2/ffffff?text=FB" alt="Facebook">
+            </a>
+            <a href="https://maps.app.goo.gl/jxpV4m1y25hQicZ36" target="_blank">
+                <img src="https://placehold.co/50x50/34a853/ffffff?text=Map" alt="Ubicación">
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Lavandería "La Barranca". Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function () {
+            document.querySelector(".nav-menu").classList.toggle("show");
+        });
+    </script>
+</body>
+</html>
