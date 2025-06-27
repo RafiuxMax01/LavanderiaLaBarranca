@@ -93,6 +93,7 @@ section {
     color: white;
     padding-top: 180px;
     padding-bottom: 120px;
+    margin-top: 80px; /* 👈 Esto separa el hero del menú */
 }
 
 .hero h1 {
@@ -261,6 +262,9 @@ footer {
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
+    }
+    .hero {
+        margin-top: 80px; /* 👈 Espacio entre menú desplegable y hero solo en móvil */
     }
     .hero h1 {
         font-size: 36px;
