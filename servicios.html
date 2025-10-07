@@ -1,131 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - Lavandería La Barranca</title>
-    <link rel="icon" href="Recursos/LogoLavanderia.png" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/style.css">
-        <script src="JS/script.js" defer></script>
-    <style>
-        /* Estilos generales */
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios - Lavandería La Barranca</title>
+<link rel="icon" href="Recursos/LogoLavanderia.png" type="image/x-icon">
+<link rel="stylesheet" href="CSS/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="JS/script.js" defer></script>
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0; /* Oculto por defecto */
-        }
-
-        /* Estilos móviles */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: white;
-                width: 100%;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 10px;
-            }
-            .nav-link.active {
-                color: #007bff;
-                font-weight: bold;
-                border-bottom: 2px solid #007bff;
-            }
-            .nav-menu.show {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-                background: none;
-                border: none;
-                font-size: 24px;
-                cursor: pointer;
-            }
-        }
-
-        /* Ocultar el botón de menú en escritorio */
-        @media (min-width: 769px) {
-            .menu-toggle {
-                display: none;
-            }
-        }
-    </style>
-    
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff; /* Fondo blanco */
+    margin: 0;
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+}
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+.nav-link.active {
+    color: #007bff;
+    text-decoration: underline;
+}
+.hero {
+    background: none; /* Sin fondo azul */
+    padding: 60px 20px;
+    text-align: center;
+}
+.hero h1,
+.hero p {
+    color: #333;
+}
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+.service-card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.service-card:hover {
+    transform: translateY(-10px);
+}
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: white;
+        width: 100%;
+        padding: 10px;
+    }
+    .nav-menu.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+</style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="navbar-container">
-            <a href="servicios.html" class="navbar-logo">
-                <img src="Recursos/LogoLavanderia.png" alt="Logo Lavandería La Barranca">
-            </a>
-            <button class="menu-toggle">☰</button>
-            <nav class="nav-menu">
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="nosotros.html" class="nav-link">Nosotros</a>
-                <a href="servicios.html" class="nav-link active">Nuestros Servicios</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
-                <a href="comentarios.html" class="nav-link">Comentarios</a>
-            </nav>
-            <a href="contacto.html" class="navbar-cta">
-                <img src="https://placehold.co/200x50/007bff/ffffff?text=Cotiza+Tu+Servicio" 
-                alt="Cotiza tu servicio">
-            </a>
-        </div>
-    </header>
+<header class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">
+            <img src="Recursos/LogoLavanderia.png" alt="Logo Lavandería La Barranca">
+        </a>
+        <button class="menu-toggle">☰</button>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="nosotros.html" class="nav-link">Nosotros</a>
+            <a href="servicios.html" class="nav-link active">Nuestros Servicios</a>
+            <a href="contacto.html" class="nav-link">Contacto</a>
+            <a href="comentarios.html" class="nav-link">Comentarios</a>
+        </nav>
+        <a href="contacto.html" class="navbar-cta">
+            <img src="https://placehold.co/200x50/007bff/ffffff?text=Cotiza+Tu+Servicio" alt="Cotiza tu servicio">
+        </a>
+    </div>
+</header>
 
-    <main>
-       <section class="page-section services-section">
-        <h2 style="text-align: center;">Nuestros Servicios</h2>
-        <div class="services-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: auto;">
-        <div class="service-card" style="background: #f9f9f9; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-            <img src="Recursos/LavadoDeRopa.jpeg"
-            alt="Servicio de Lavado de Ropa" loading="lazy" width="100" height="100">
-            <h4 style="margin-top: 10px; font-size: 1rem;">Lavado de Ropa</h4>
-        </div>
-        <div class="service-card" style="background: #f9f9f9; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-            <img src="Recursos/LavadoDeEdredones.jpeg"
-            alt="Servicio de Lavado de Edredones" loading="lazy" width="100" height="100">
-            <h4 style="margin-top: 10px; font-size: 1rem;">Lavado de Edredones</h4>
-        </div>
-        <div class="service-card" style="background: #f9f9f9; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-            <img src="Recursos/LavadoDeCalzado.webp"
-            alt="Servicio de Lavado de Calzado" loading="lazy" width="100" height="100">
-            <h4 style="margin-top: 10px; font-size: 1rem;">Lavado de Calzado</h4>
-        </div>
-        <div class="service-card" style="background: #f9f9f9; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-            <img src="Recursos/ServicioDePlanchado.jpg"
-            alt="Servicio de Planchado" loading="lazy" width="100" height="100">
-            <h4 style="margin-top: 10px; font-size: 1rem;">Servicio de Planchado</h4>
-        </div>
-        </div>
-        </section>
-        <section class="cta-section">
-            <h2>Cotiza Hoy Tu Servicio de Lavandería Con Nosotros</h2>
-            <a href="contacto.html" class="cta-button">Contactar Ahora</a>
-        </section>
-    </main>
+<main>
+<section class="hero">
+    <h1>Nuestros Servicios</h1>
+    <p>Calidad, cuidado y servicio excepcional para tu ropa.</p>
+</section>
 
-    <footer>
-        <p>© 2024 Lavandería "La Barranca". Todos los derechos reservados.</p>
-    </footer>
+<section class="services-grid">
+    <div class="service-card">
+        <img src="Recursos/LavadoDeRopa.jpeg" alt="Lavado de Ropa" width="100" height="100">
+        <h4>Lavado de Ropa</h4>
+    </div>
+    <div class="service-card">
+        <img src="Recursos/LavadoDeEdredones.jpeg" alt="Lavado de Edredones" width="100" height="100">
+        <h4>Lavado de Edredones</h4>
+    </div>
+    <div class="service-card">
+        <img src="Recursos/LavadoDeCalzado.webp" alt="Lavado de Calzado" width="100" height="100">
+        <h4>Lavado de Calzado</h4>
+    </div>
+    <div class="service-card">
+        <img src="Recursos/ServicioDePlanchado.jpg" alt="Servicio de Planchado" width="100" height="100">
+        <h4>Servicio de Planchado</h4>
+    </div>
+</section>
+</main>
 
-    <script src="JS/script.js"></script>
-          <script>
-        document.querySelector(".menu-toggle").addEventListener("click", function () {
-            document.querySelector(".nav-menu").classList.toggle("show");
-        });
-    </script>
+<footer>
+    <p>© 2024 Lavandería "La Barranca". Todos los derechos reservados.</p>
+</footer>
+
+<script>
+document.querySelector(".menu-toggle").addEventListener("click", function () {
+    document.querySelector(".nav-menu").classList.toggle("show");
+});
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.utils.toArray(".service-card").forEach(card => {
+    gsap.to(card, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+        }
+    });
+});
+</script>
+
 </body>
 </html>

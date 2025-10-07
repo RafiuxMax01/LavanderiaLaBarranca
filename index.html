@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Lavandería La Barranca</title>
-    <link rel="icon" href="Recursos/LogoLavanderia.png" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-    <script src="JS/script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio - Lavandería La Barranca</title>
+<link rel="icon" href="Recursos/LogoLavanderia.png" type="image/x-icon">
+<link rel="stylesheet" href="CSS/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="JS/script.js" defer></script>
+
 <style>
-    /* Estilos generales */
     body {
         font-family: 'Roboto', sans-serif;
         background-color: #f5f5f5;
-        background-image: url('https://example.com/fondo-textura.jpg');
-        background-size: cover;
-        color: #333;
         margin: 0;
         padding: 0;
         line-height: 1.6;
     }
-
     .navbar-container {
         display: flex;
         justify-content: space-between;
@@ -29,83 +26,56 @@
         padding: 10px;
         background-color: #ffffff;
     }
-
     .nav-menu {
         display: flex;
         list-style: none;
         margin: 0;
         padding: 0;
     }
-
     .nav-link {
         text-decoration: none;
         color: #333;
         padding: 10px 15px;
         font-weight: bold;
     }
-
     .nav-link.active {
         color: #007bff;
         text-decoration: underline;
     }
-
     .hero {
-        text-align: center;
-        padding: 50px 20px;
-        background-color: #007bff;
+        background: url('Recursos/PiedrasAzules.jpg') no-repeat center center;
+        background-size: cover;
+        padding: 80px 20px;
         color: white;
-        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://example.com/fondo-hero.jpg');
+        text-align: center;
     }
-
+    .hero h1,
+    .hero p {
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
     h1 {
         font-family: 'Pacifico', cursive;
         font-size: 2.5rem;
         margin-bottom: 20px;
     }
-
     .bold-text {
         font-weight: bold;
     }
-
     .italic-text {
         font-style: italic;
     }
-
     .underlined-text {
         text-decoration: underline;
     }
-
-    .text-left {
-        text-align: left;
-    }
-
-    .text-center {
-        text-align: center;
-    }
-
-    .text-right {
-        text-align: right;
-    }
-
-    .text-justify {
-        text-align: justify;
-    }
-
-    .text-blue {
-        color: #007bff;
-    }
-
     .text-large {
         font-size: 1.5rem;
     }
-
     .social-links {
         display: flex;
         justify-content: center;
         gap: 20px;
         padding: 20px;
     }
-
     footer {
         background-color: #333;
         color: white;
@@ -113,8 +83,6 @@
         padding: 20px;
         font-size: 0.9rem;
     }
-
-    /* Estilos móviles */
     @media (max-width: 768px) {
         .nav-menu {
             display: none;
@@ -127,11 +95,9 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             padding: 10px;
         }
-
         .nav-menu.show {
             display: flex;
         }
-
         .menu-toggle {
             display: block;
             background: none;
@@ -139,80 +105,79 @@
             font-size: 24px;
             cursor: pointer;
         }
-
         h1 {
             font-size: 2rem;
         }
     }
-
-    /* Ocultar el botón de menú en escritorio */
     @media (min-width: 769px) {
         .menu-toggle {
             display: none;
         }
     }
 </style>
-
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">
-                <img src="Recursos/LogoLavanderia.png" alt="Logo Lavandería La Barranca">
-            </a>
-            <button class="menu-toggle">☰</button>
-            <nav class="nav-menu">
-                <a href="index.html" class="nav-link active">Inicio</a>
-                <a href="nosotros.html" class="nav-link">Nosotros</a>
-                <a href="servicios.html" class="nav-link">Nuestros Servicios</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
-                <a href="comentarios.html" class="nav-link">Comentarios</a>
-            </nav>
-            <a href="contacto.html" class="navbar-cta">
-                <img src="https://placehold.co/200x50/007bff/ffffff?text=Cotiza+Tu+Servicio" 
-                alt="Cotiza tu servicio">
-            </a>
-        </div>
-    </header>
+<header class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">
+            <img src="Recursos/LogoLavanderia.png" alt="Logo Lavandería La Barranca">
+        </a>
+        <button class="menu-toggle">☰</button>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link active">Inicio</a>
+            <a href="nosotros.html" class="nav-link">Nosotros</a>
+            <a href="servicios.html" class="nav-link">Nuestros Servicios</a>
+            <a href="contacto.html" class="nav-link">Contacto</a>
+            <a href="comentarios.html" class="nav-link">Comentarios</a>
+        </nav>
+        <a href="contacto.html" class="navbar-cta">
+            <img src="https://placehold.co/200x50/007bff/ffffff?text=Cotiza+Tu+Servicio" alt="Cotiza tu servicio">
+        </a>
+    </div>
+</header>
 
-    <main>
-        <section class="hero">
-            <h1>Lavandería La Barranca</h1>
-            <p class="text-large">¡Soluciones en el <span class="bold-text">Lavado De Ropa</span>, <span class="italic-text">Edredones</span>, <span class="underlined-text">Calzado</span> Y más!</p>
-        </section>
+<main>
+    <section class="hero">
+        <h1>Lavandería La Barranca</h1>
+        <p class="text-large">¡Soluciones en el <span class="bold-text">Lavado De Ropa</span>, <span class="italic-text">Edredones</span>, <span class="underlined-text">Calzado</span> y más!</p>
+    </section>
 
-        <section class="text-center">
-            <h2 class="text-blue">Nuestros Servicios.</h2>
-            <p class="text-large">Ofrecemos una amplia gama de servicios de lavandería para satisfacer todas tus necesidades. Desde lavado básico hasta tratamientos especiales para prendas delicadas.</p>
-            
-        </section>
+    <section class="text-center">
+        <h2 class="text-blue">Nuestros Servicios.</h2>
+        <p class="text-large">Ofrecemos una amplia gama de servicios de lavandería para satisfacer todas tus necesidades.</p>
+    </section>
 
-       <div class="social-links">
-    <a href="https://www.facebook.com/profile.php?id=61557270535837" target="_blank" aria-label="Facebook">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="50" height="50" style="border-radius: 8px; background: white;">
-    </a>
-    <a href="https://maps.app.goo.gl/z7sZ3L7AaYYkJDLE6" target="_blank" aria-label="Ubicación en Google Maps">
-        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Ubicación" width="50" height="50" style="border-radius: 8px; background: white;">
-    </a>
-</div>
+    <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61557270535837" target="_blank" aria-label="Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="50" height="50" style="border-radius: 8px; background: white;">
+        </a>
+        <a href="https://maps.app.goo.gl/z7sZ3L7AaYYkJDLE6" target="_blank" aria-label="Ubicación en Google Maps">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Ubicación" width="50" height="50" style="border-radius: 8px; background: white;">
+        </a>
+    </div>
+</main>
 
-</div>
+<footer>
+    <p>© 2024 Lavandería "La Barranca". Todos los derechos reservados.</p>
+</footer>
 
-</div>
+<script>
+document.querySelector(".menu-toggle").addEventListener("click", function () {
+    document.querySelector(".nav-menu").classList.toggle("show");
+});
 
-</div>
+// Animaciones GSAP
+gsap.registerPlugin(ScrollTrigger);
 
-    </main>
+// Animación hero
+gsap.from(".hero h1", {opacity: 0, y: -50, duration: 1, delay: 0.5});
+gsap.from(".hero p", {opacity: 0, y: 50, duration: 1, delay: 1});
 
-    <footer>
-        <p>© 2024 Lavandería "La Barranca". Todos los derechos reservados.</p>
-    </footer>
+// Animación servicios
+gsap.from(".text-center h2", {opacity: 0, y: 50, duration: 1, scrollTrigger: {trigger: ".text-center", start: "top 80%"}});
+gsap.from(".text-center p", {opacity: 0, y: 50, duration: 1, delay: 0.3, scrollTrigger: {trigger: ".text-center", start: "top 80%"}});
+</script>
 
-    <script>
-        document.querySelector(".menu-toggle").addEventListener("click", function () {
-            document.querySelector(".nav-menu").classList.toggle("show");
-        });
-    </script>
 </body>
 </html>
