@@ -4,68 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Lavandería La Barranca</title>
-    <link rel="icon" href="Recursos/LogoLavanderia.png" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/style.css">
-    <script src="JS/script.js" defer></script>
-    <style>
-        /* Estilos móviles y generales ya definidos en style.css */
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: white;
-                width: 100%;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 10px;
-            }
-            .nav-menu.show {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-                background: none;
-                border: none;
-                font-size: 24px;
-                cursor: pointer;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .menu-toggle {
-                display: none;
-            }
-        }
-
-        /* Animaciones iniciales */
-        .about-section h2, .about-section p {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-    </style>
+    <link rel="icon" href="Assets/Images/Logos/LogoLavanderia.png" type="image/x-icon">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <script src="Assets/JS/script.js" defer></script>
+    <script src="Assets/JS/animations.js" defer></script>
 </head>
 <body>
 
 <header class="navbar">
     <div class="navbar-container">
         <a href="index.html" class="navbar-logo">
-            <img src="Recursos/LogoLavanderia.png" alt="Logo Lavandería La Barranca">
+            <img src="Assets/Images/Logos/LogoLavanderia.png" alt="Logo Lavandería La Barranca">
         </a>
         <button class="menu-toggle">☰</button>
         <nav class="nav-menu">
@@ -76,8 +25,7 @@
             <a href="comentarios.html" class="nav-link">Comentarios</a>
         </nav>
         <a href="contacto.html" class="navbar-cta">
-            <img src="https://placehold.co/200x50/007bff/ffffff?text=Cotiza+Tu+Servicio" 
-            alt="Cotiza tu servicio">
+            <img src="https://placehold.co/200x50/d94a8c/ffffff?text=Cotiza+Ahora" alt="Cotiza tu servicio">
         </a>
     </div>
 </header>
@@ -85,7 +33,10 @@
 <main>
     <section class="page-section about-section">
         <h2>Una Empresa Orgullosamente Hidrocálida</h2>
-        <p>
+
+        <img src="Assets/Images/PhotosR/Lavanderia Casa.jpg" alt="Entrada de Lavandería La Barranca" class="about-image">
+
+        <p style="max-width: 800px; margin: 0 auto;">
             Somos Lavandería "La Barranca", una empresa familiar nacida en el corazón de Aguascalientes. Nuestro compromiso es brindarte un servicio de lavandería excepcional, tratando cada prenda con el máximo cuidado y utilizando productos de la más alta calidad para garantizar resultados impecables. Creemos en el trabajo bien hecho y en la satisfacción de nuestros clientes. <br><br>
             Para más información, contáctanos al: <strong>449-654-7684</strong>
         </p>
@@ -93,47 +44,22 @@
 </main>
 
 <footer>
-    <p>© 2024 Lavandería "La Barranca". Todos los derechos reservados.</p>
+    <div class="footer-content">
+        <p>© 2024 Lavandería "La Barranca". Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1BeEdReRwc/?mibextid=wwXIfr" target="_blank" aria-label="Visita nuestra página de Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z"/>
+                </svg>
+            </a>
+            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3703.0909343994194!2d-102.3206380894785!3d21.854027879926555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ec3c80b8ff89%3A0xaefd5fde6b7fe81c!2sGerardo%20Murillo%20141%2C%20Jos%C3%A9%20L%C3%B3pez%20Portillo%2C%2020206%20Aguascalientes%2C%20Ags.!5e0!3m2!1ses-419!2smx!4v1760204043414!5m2!1ses-419!2smx" target="_blank" aria-label="Encuéntranos en Google Maps">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
 </footer>
-
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector(".menu-toggle").addEventListener("click", function () {
-        document.querySelector(".nav-menu").classList.toggle("show");
-    });
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Animar título
-    gsap.to(".about-section h2", {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: ".about-section",
-            start: "top 80%",
-        }
-    });
-
-    // Animar párrafo suavemente
-    gsap.to(".about-section p", {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        delay: 0.3,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: ".about-section",
-            start: "top 80%",
-        }
-    });
-});
-</script>
 
 </body>
 </html>

@@ -1,115 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servicios - Lavandería La Barranca</title>
-<link rel="icon" href="Recursos/LogoLavanderia.png" type="image/x-icon">
-<link rel="stylesheet" href="CSS/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="JS/script.js" defer></script>
-
-<style>
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #ffffff; /* Fondo blanco */
-    margin: 0;
-}
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #ffffff;
-}
-.nav-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.nav-link {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 15px;
-    font-weight: bold;
-}
-.nav-link.active {
-    color: #007bff;
-    text-decoration: underline;
-}
-.hero {
-    background: none; /* Sin fondo azul */
-    padding: 60px 20px;
-    text-align: center;
-}
-.hero h1,
-.hero p {
-    color: #333;
-}
-h1 {
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    gap: 20px;
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-.service-card {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-}
-.service-card:hover {
-    transform: translateY(-10px);
-}
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background: white;
-        width: 100%;
-        padding: 10px;
-    }
-    .nav-menu.show {
-        display: flex;
-    }
-    .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-    }
-}
-@media (min-width: 769px) {
-    .menu-toggle {
-        display: none;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Lavandería La Barranca</title>
+    <link rel="icon" href="Assets/Images/Logos/LogoLavanderia.png" type="image/x-icon">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <script src="Assets/JS/script.js" defer></script>
+    <script src="Assets/JS/animations.js" defer></script>
 </head>
 <body>
 
 <header class="navbar">
     <div class="navbar-container">
         <a href="index.html" class="navbar-logo">
-            <img src="Recursos/LogoLavanderia.png" alt="Logo Lavandería La Barranca">
+            <img src="Assets/Images/Logos/LogoLavanderia.png" alt="Logo Lavandería La Barranca">
         </a>
         <button class="menu-toggle">☰</button>
         <nav class="nav-menu">
@@ -120,60 +25,53 @@ h1 {
             <a href="comentarios.html" class="nav-link">Comentarios</a>
         </nav>
         <a href="contacto.html" class="navbar-cta">
-            <img src="https://placehold.co/200x50/007bff/ffffff?text=Cotiza+Tu+Servicio" alt="Cotiza tu servicio">
+            <img src="https://placehold.co/200x50/d94a8c/ffffff?text=Cotiza+Ahora" alt="Cotiza tu servicio">
         </a>
     </div>
 </header>
 
 <main>
-<section class="hero">
-    <h1>Nuestros Servicios</h1>
-    <p>Calidad, cuidado y servicio excepcional para tu ropa.</p>
-</section>
-
-<section class="services-grid">
-    <div class="service-card">
-        <img src="Recursos/LavadoDeRopa.jpeg" alt="Lavado de Ropa" width="100" height="100">
-        <h4>Lavado de Ropa</h4>
-    </div>
-    <div class="service-card">
-        <img src="Recursos/LavadoDeEdredones.jpeg" alt="Lavado de Edredones" width="100" height="100">
-        <h4>Lavado de Edredones</h4>
-    </div>
-    <div class="service-card">
-        <img src="Recursos/LavadoDeCalzado.webp" alt="Lavado de Calzado" width="100" height="100">
-        <h4>Lavado de Calzado</h4>
-    </div>
-    <div class="service-card">
-        <img src="Recursos/ServicioDePlanchado.jpg" alt="Servicio de Planchado" width="100" height="100">
-        <h4>Servicio de Planchado</h4>
-    </div>
-</section>
+    <section class="page-section services-section">
+        <h2>Nuestros Servicios</h2>
+        <p style="max-width: 600px; margin: 0 auto 40px; font-size: 18px;">Calidad, cuidado y servicio excepcional para tu ropa y más.</p>
+    
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="Assets/Images/PhotosR/LavadoDeRopa.jpeg" alt="Servicio de Lavado de Ropa">
+                <h4>Lavado de Ropa</h4>
+            </div>
+            <div class="service-card">
+                <img src="Assets/Images/PhotosR/LavadoDeEdredones.jpeg" alt="Servicio de Lavado de Edredones">
+                <h4>Lavado de Edredones</h4>
+            </div>
+            <div class="service-card">
+                <img src="Assets/Images/PhotosR/LavadoDeCalzado.webp" alt="Servicio de Lavado de Calzado">
+                <h4>Lavado de Calzado</h4>
+            </div>
+            <div class="service-card">
+                <img src="Assets/Images/PhotosR/ServicioDePlanchado.jpg" alt="Servicio de Planchado">
+                <h4>Servicio de Planchado</h4>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer>
-    <p>© 2024 Lavandería "La Barranca". Todos los derechos reservados.</p>
+    <div class="footer-content">
+        <p>© 2024 Lavandería "La Barranca". Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1BeEdReRwc/?mibextid=wwXIfr" target="_blank" aria-label="Visita nuestra página de Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z"/>
+                </svg>
+            </a>
+            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3703.0909343994194!2d-102.3206380894785!3d21.854027879926555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ec3c80b8ff89%3A0xaefd5fde6b7fe81c!2sGerardo%20Murillo%20141%2C%20Jos%C3%A9%20L%C3%B3pez%20Portillo%2C%2020206%20Aguascalientes%2C%20Ags.!5e0!3m2!1ses-419!2smx!4v1760204043414!5m2!1ses-419!2smx" target="_blank" aria-label="Encuéntranos en Google Maps">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
 </footer>
-
-<script>
-document.querySelector(".menu-toggle").addEventListener("click", function () {
-    document.querySelector(".nav-menu").classList.toggle("show");
-});
-
-gsap.registerPlugin(ScrollTrigger);
-gsap.utils.toArray(".service-card").forEach(card => {
-    gsap.to(card, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-        }
-    });
-});
-</script>
-
 </body>
 </html>
