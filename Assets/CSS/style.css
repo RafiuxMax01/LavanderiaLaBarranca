@@ -87,6 +87,30 @@ body {
     border-bottom: 2px solid #2c3e50;
 }
 
+/* NUEVOS ESTILOS para el CTA de texto en el navbar */
+.navbar-cta-text {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d94a8c; /* Color de fondo similar a la imagen */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.navbar-cta-text:hover {
+    transform: scale(1.05);
+    background-color: #c03978; /* Un poco más oscuro al pasar el mouse */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Eliminar el estilo anterior para la imagen CTA */
+.navbar-cta {
+    display: none; /* Ocultamos el viejo CTA basado en imagen si existe */
+}
 .navbar-cta img {
     height: 45px;
     transition: transform 0.3s;
@@ -148,6 +172,9 @@ section {
     gap: 20px;
     flex-wrap: wrap;
     background-color: #f4f4f4;
+    /* REDUCCIÓN DE PADDING: De 150px a 80px para acortar la sección visualmente */
+    padding-top: 80px; 
+    padding-bottom: 80px;
 }
 
 .feature-panel {
@@ -456,6 +483,11 @@ footer {
 
     .menu-toggle {
         display: block; 
+    }
+
+    /* Mostrar el CTA de texto en móviles si es necesario, pero lo ocultamos en el menú principal */
+    .navbar-cta-text { 
+         display: none;
     }
 
     .navbar-cta {

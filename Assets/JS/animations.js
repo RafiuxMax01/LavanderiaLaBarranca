@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Asegurarse de que GSAP y ScrollTrigger estén cargados
+    // Esencial: Asegurar que GSAP y ScrollTrigger estén cargados
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
         console.warn("GSAP o ScrollTrigger no están cargados. Algunas animaciones no funcionarán.");
         return;
@@ -7,22 +7,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
+    // =========================================================
+    // 1. ANIMACIÓN CONSTANTE DEL LOGO (WOBBLE - TIPO LAVADO)
+    // =========================================================
+    // La animación se repite infinitamente para dar la sensación de un logo "activo" o una lavadora funcionando.
+    gsap.to(".navbar-logo img", {
+        rotation: 1, 
+        duration: 0.8,
+        ease: "power1.inOut",
+        yoyo: true, // Va y vuelve a la posición inicial
+        repeat: -1 // Repetición infinita
+    });
+
+    // =========================================================
+    // 2. ANIMACIÓN: MOVIMIENTO DE FONDO EN BUCLE (SUTIL)
+    // =========================================================
+    // Mueve la posición del fondo del Hero sutilmente en bucle para darle vida
+    // sin depender del scroll.
+    gsap.to(".hero", {
+        backgroundPosition: "50% 55%", // Mueve el fondo ligeramente hacia abajo
+        duration: 8, // Duración larga para que sea muy sutil
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1
+    });
+
+    // =========================================================
+    // 3. ANIMACIONES DE ENTRADA (ESTÁNDAR)
+    // =========================================================
+
     // Animación para el Hero Section
     gsap.from(".hero h1", {
         duration: 1.5,
         y: -50,
         opacity: 0,
-        ease: "power3.out"
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".hero", start: "top 90%", toggleActions: "play none none none" }
     });
     gsap.from(".hero p", {
         duration: 1.5,
         y: 50,
         opacity: 0,
         ease: "power3.out",
-        delay: 0.5
+        delay: 0.5,
+        scrollTrigger: { trigger: ".hero", start: "top 90%", toggleActions: "play none none none" }
     });
 
-    // Animación de las Feature Panels
+    // Animación de las Feature Panels (Entrada y rebote)
+    // Vuelve a la animación de entrada original, sin pinning, por lo que el scroll fluye normalmente.
     gsap.from(".feature-panel", {
         scrollTrigger: {
             trigger: ".features",
