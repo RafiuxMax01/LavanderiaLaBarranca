@@ -143,7 +143,7 @@ section {
     padding-top: 120px;
 }
 
-.page-section h2, .hero h1, .page-section h3 {
+.page-section h2, .page-section h3 {
     font-family: 'Pacifico', cursive;
     font-size: clamp(2.5rem, 5vw, 3rem); 
     color: #2c3e50;
@@ -158,12 +158,26 @@ section {
     margin-top: 80px;
 }
 
-.hero h1, .hero p {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+.hero h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(2.5rem, 5vw, 3rem); 
+    color: white; /* Color base del texto */
+    margin-bottom: 25px;
+    /* EFECTO NEÓN APLICADO AQUÍ */
+    text-shadow: 
+        0 0 7px #00aaff,   /* Azul claro */
+        0 0 10px #00aaff,
+        0 0 21px #00aaff,
+        0 0 42px #0055ff,   /* Azul más intenso */
+        0 0 82px #0055ff,
+        0 0 92px #0055ff,
+        0 0 102px #0055ff,
+        0 0 151px #0055ff;
 }
 
 .hero p {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Mantiene la sombra oscura para el subtítulo */
 }
 
 .features {
@@ -172,7 +186,6 @@ section {
     gap: 20px;
     flex-wrap: wrap;
     background-color: #f4f4f4;
-    /* REDUCCIÓN DE PADDING: De 150px a 80px para acortar la sección visualmente */
     padding-top: 80px; 
     padding-bottom: 80px;
 }
