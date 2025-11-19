@@ -6,6 +6,9 @@
     <title>Contacto - Lavandería La Barranca</title>
     <link rel="icon" href="Assets/Images/Logos/LogoLavanderia.png" type="image/x-icon">
     <link rel="stylesheet" href="Assets/CSS/style.css">
+    <!-- AÑADIDA LIBRERÍA GSAP Y SCROLLTRIGGER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="Assets/JS/script.js" defer></script>
     <script src="Assets/JS/animations.js" defer></script>
 </head>
@@ -24,8 +27,9 @@
             <a href="contacto.html" class="nav-link active">Contacto</a>
             <a href="comentarios.html" class="nav-link">Comentarios</a>
         </nav>
-        <a href="contacto.html" class="navbar-cta">
-            <img src="https://placehold.co/200x50/d94a8c/ffffff?text=Cotiza+Ahora" alt="Cotiza tu servicio">
+        <!-- REEMPLAZO DE CTA IMAGEN POR TEXTO -->
+        <a href="contacto.html" class="navbar-cta-text">
+            Cotiza Ahora
         </a>
     </div>
 </header>
@@ -51,7 +55,7 @@
                 </div>
                 <div class="info-item">
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,4H4A2,2,0,0,0,2,6V18a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V6A2,2,0,0,0,20,4ZM4,6h0L12,11.4,20,6h0L12,17.4Z"/></svg>
-                    <p><strong>Correo Electrónico:</strong><br> <a href="mailto:contacto@lavanderialabarranca.com">---</a></p>
+                    <p><strong>Correo Electrónico:</strong><br> <a href="mailto:contacto@lavanderialabarranca.com">contacto@lavanderialabarranca.com</a></p>
                 </div>
             </div>
             <form class="contact-form">
@@ -74,7 +78,7 @@
 
     <section class="map-section">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3701.693041079524!2d-102.3168383247164!3d21.90799497996924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee648a8a478d%3A0x6b2450c268f70791!2sGerardo%20Murillo%20141%2C%20Jos%C3%A9%20L%C3%B3pez%20Portillo%2C%2020206%20Aguascalientes%2C%20Ags.!5e0!3m2!1ses-419!2smx!4v1715891465225!5m2!1ses-419!2smx"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3703.090934399412!2d-102.32063808905433!3d21.854027879926495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ec3c80b8ff89%3A0xaefd5fde6b7fe81c!2sGerardo%20Murillo%20141%2C%20Jos%C3%A9%20L%C3%B3pez%20Portillo%2C%2020206%20Aguascalientes%2C%20Ags.!5e0!3m2!1ses-419!2smx!4v1763594582090!5m2!1ses-419!2smx"
             width="100%" 
             height="450" 
             style="border:0;" 
@@ -103,5 +107,10 @@
     </div>
 </footer>
 
+    <a href="https://wa.me/524494386920?text=Hola,%20me%20gustaría%20cotizar%20un%20servicio." class="whatsapp-float" target="_blank" aria-label="Contáctanos por WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.16C10.57 20.16 9.12 19.76 7.85 19L7.55 18.82L4.43 19.64L5.26 16.6L5.08 16.31C4.23 14.96 3.79 13.45 3.79 11.91C3.79 7.37 7.49 3.67 12.04 3.67C14.25 3.67 16.32 4.53 17.89 6.09C19.46 7.65 20.32 9.73 20.32 11.92C20.32 16.46 16.61 20.16 12.05 20.16ZM16.56 14.44C16.31 14.32 15.1 13.72 14.87 13.64C14.65 13.56 14.48 13.52 14.32 13.77C14.15 14.01 13.68 14.56 13.54 14.73C13.39 14.89 13.25 14.91 13 14.79C12.75 14.66 11.95 14.4 11 13.56C10.26 12.9 9.76 12.08 9.61 11.83C9.47 11.58 9.6 11.44 9.73 11.32C9.84 11.21 9.98 11.03 10.1 10.89C10.23 10.75 10.27 10.65 10.35 10.48C10.44 10.32 10.39 10.17 10.33 10.05C10.27 9.93 9.79 8.75 9.59 8.27C9.39 7.8 9.19 7.87 9.04 7.86C8.9 7.86 8.73 7.85 8.57 7.85C8.4 7.85 8.13 7.92 7.9 8.17C7.67 8.42 7.03 9.02 7.03 10.24C7.03 11.46 7.92 12.64 8.05 12.81C8.18 12.98 9.82 15.5 12.33 16.59C12.93 16.85 13.4 17 13.77 17.12C14.38 17.31 14.94 17.29 15.38 17.22C15.87 17.15 16.89 16.6 17.1 16.01C17.31 15.42 17.31 14.92 17.25 14.81C17.18 14.71 17.02 14.65 16.77 14.53H16.56Z"/>
+        </svg>
+    </a>
 </body>
 </html>
