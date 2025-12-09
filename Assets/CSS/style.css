@@ -193,13 +193,14 @@ section {
 }
 
 .feature-panel {
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 400px;
+    width: 100%;
+    max-width: 300px;
     transition: transform 0.3s, box-shadow 0.3s;
-    /* CLAVE PARA ALTURAS PAREJAS: asegura que el contenido
+    /* CLAVE PARA ALTURAS PAREJAS: asegura que el contenido interno se estire */
     display: flex;
     flex-direction: column;
     /* Centra el contenido horizontalmente (incluyendo el ícono) */
@@ -299,7 +300,7 @@ section {
 
 /* ==================== SECCIÓN DE CONTACTO Y COMENTARIOS ==================== */
 .contact-section {
-    background: url('../Images/Background/Burbujas.webp') repeat center center/cover;
+    background: url('../Images/Background/Burbujas.png') repeat center center/cover;
     background-color: #f8f8f8;
 }
 
@@ -444,15 +445,6 @@ section {
     width: 50px; height: 50px; margin-right: 15px; object-fit: contain; margin-top: 4px;
 }
 
-/* Estilos para la sección del mapa */
-.map-section {
-    padding: 0; /* Elimina el padding para que el mapa ocupe todo el ancho */
-    width: 100%;
-}
-
-.map-section iframe {
-    display: block; /* Elimina el espacio extra debajo del iframe */
-}
 
 /* ==================== PIE DE PÁGINA ==================== */
 footer {
@@ -505,7 +497,7 @@ footer {
         width: 100%;
         background-color: #ffffff;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        padding: 15px 0;
+        padding: 12px 0;
         border-top: 1px solid #eee;
         z-index: 999;
     }
@@ -549,9 +541,55 @@ footer {
 @media (max-width: 768px) {
     .hero {
         margin-top: 80px;
+        padding-top: 100px;
+        padding-bottom: 60px;
     }
     .hero p {
         padding: 0 5%;
+    }
+
+    /* Ajustes generales para móviles */
+    section {
+        padding: 40px 5%;
+    }
+
+    /* Ajustes específicos para Contacto */
+    .contact-container {
+        width: 92%; /* Reducimos el ancho para ver más fondo */
+    }
+
+    .contact-info-grid, .contact-form {
+        padding: 10px; /* Reducimos el padding interno */
+    }
+
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .info-item p {
+        text-align: center;
+    }
+    
+    .info-item .icon {
+        margin-bottom: 10px;
+    }
+
+    .map-section iframe {
+        height: 300px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
     }
 }
 body,
@@ -563,35 +601,6 @@ select {
     cursor: url('../Images/Icons/Cursorjabon.png'), auto !important;
 }
 
-/* ==================== BOTÓN FLOTANTE DE WHATSAPP ==================== */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-}
-
-.whatsapp-float svg {
-    width: 35px;
-    height: 35px;
-    fill: white;
-}
-
 .about-image {
     max-width: 500px;
     width: 100%;
@@ -600,4 +609,171 @@ select {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     margin: 20px auto 30px;
     display: block;
+}
+
+/* ==================== TABLA DE PRECIOS ==================== */
+.prices-section {
+    background-color: #ffffff;
+    padding-bottom: 80px;
+}
+
+.prices-subtitle {
+    font-size: 1.2rem;
+    color: #2f39f2;
+    margin-top: -15px;
+    margin-bottom: 40px;
+}
+
+.table-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: auto; /* Para que sea scrollable en móviles si es muy ancha */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.prices-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.prices-table th, .prices-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.prices-table th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+/* Encabezados de sección dentro de la tabla */
+.section-header td {
+    background-color: #d2d5f9;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* Filas alternadas para mejor lectura */
+.prices-table tbody tr:not(.section-header):nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.prices-table tbody tr:hover:not(.section-header) {
+    background-color: #f0f4ff;
+    transition: background-color 0.2s;
+}
+
+/* Estilo para la columna de precios */
+.prices-table td:last-child {
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.prices-table th:last-child {
+    text-align: right;
+}
+
+.disclaimer {
+    font-size: 0.85rem;
+    color: #888888;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .prices-table th, .prices-table td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+    .section-header td {
+        font-size: 1.1rem;
+    }
+}
+
+/* ==================== ESTILOS PARA ENLACES DE TARJETAS ==================== */
+/* Esto asegura que el enlace que envuelve la tarjeta no tenga estilos de texto feos */
+.service-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.service-card-link:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse sobre todo el bloque */
+}
+
+/* Ajuste para que el hover de la tarjeta interna no interfiera, 
+   ya que ahora el hover lo maneja el enlace contenedor */
+.service-card:hover {
+    transform: none; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Mantiene la sombra base */
+}
+
+/* Transferimos el efecto visual al enlace para que sea más suave */
+.service-card-link:hover .service-card {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.service-card-link:hover img {
+    transform: scale(1.1);
+}
+
+/* ==================== WHATSAPP FLOTANTE ==================== */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+}
+
+.whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
 }
