@@ -186,9 +186,7 @@ section {
     gap: 20px;
     flex-wrap: wrap;
     background-color: #f4f4f4;
-    padding-top: 80px; 
-    padding-bottom: 80px;
-    /* CLAVE PARA ALTURAS PAREJAS: estira los elementos para que llenen la altura máxima */
+    padding: 80px 20px; /* Ajuste de padding para mejor espaciado */
     align-items: stretch;
 }
 
@@ -200,14 +198,14 @@ section {
     width: 100%;
     max-width: 300px;
     transition: transform 0.3s, box-shadow 0.3s;
-    /* CLAVE PARA ALTURAS PAREJAS: asegura que el contenido interno se estire */
     display: flex;
     flex-direction: column;
-    /* Centra el contenido horizontalmente (incluyendo el ícono) */
     align-items: center; 
-    justify-content: flex-start;
-    height: 100%; /* Asegura que el panel tome la altura máxima del flex container */
-    text-align: center; /* Centra el texto */
+    text-align: center;
+}
+
+.feature-panel p {
+    flex-grow: 1; /* Esto asegura que el párrafo se expanda, igualando la altura de las tarjetas. */
 }
 
 /* Estilos para los íconos */
