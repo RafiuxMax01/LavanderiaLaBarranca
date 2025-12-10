@@ -183,45 +183,67 @@ section {
 .features {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px; /* Aumenté un poco el espacio entre paneles para que respiren mejor */
     flex-wrap: wrap;
     background-color: #f4f4f4;
-    padding: 80px 20px; /* Ajuste de padding para mejor espaciado */
-    align-items: stretch;
+    padding-top: 80px; 
+    padding-bottom: 80px;
+    align-items: stretch; /* Esto asegura que todos los paneles tengan la misma altura total */
 }
 
 .feature-panel {
     background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 30px 25px; /* Más padding arriba/abajo para dar aire */
+    border-radius: 15px; /* Bordes un poco más redondeados */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Sombra más suave y elegante */
     width: 100%;
-    max-width: 300px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 400px; /* Un ancho máximo cómodo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* FLEXBOX INTERNO PARA ALINEACIÓN VERTICAL */
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center; /* Centra horizontalmente todo el contenido */
+    justify-content: flex-start; /* Alinea todo al principio (arriba) */
+    height: 100%; /* Ocupa toda la altura disponible */
     text-align: center;
 }
 
+.feature-panel h4 {
+    margin-top: 20px; /* Espacio fijo entre el icono y el título */
+    margin-bottom: 15px; /* Espacio fijo entre el título y el texto */
+    font-size: 1.25rem;
+    color: #2c3e50;
+    min-height: 3rem; /* TRUCO CLAVE: Reserva espacio para títulos de 2 líneas si es necesario, así todo se alinea */
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente en ese espacio reservado */
+    justify-content: center;
+}
+
 .feature-panel p {
-    flex-grow: 1; /* Esto asegura que el párrafo se expanda, igualando la altura de las tarjetas. */
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1; /* Hace que el texto ocupe el espacio restante si fuera necesario */
 }
 
 /* Estilos para los íconos */
 .feature-icon {
-    margin-bottom: 15px;
-    width: 48px;
-    height: 48px;
-    /* Color azul fuerte y llamativo para que se note el ícono */
-    fill: #0055ff; 
-    /* Eliminar el efecto neón para dejar solo el color fuerte */
-    /* filter: drop-shadow(0 0 5px #00aaff) drop-shadow(0 0 10px #0055ff); */
+    width: 64px; /* Iconos un poco más grandes para mayor impacto */
+    height: 64px;
+    fill: #0055ff; /* Azul oscuro elegante (puedes cambiarlo a tu azul fuerte #0055ff si prefieres) */
+    transition: transform 0.3s ease;
 }
 
 .feature-panel:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.feature-panel:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg); /* Pequeña animación divertida al pasar el mouse */
+    fill: #d94a8c; /* Cambia a rosa al hacer hover para dar feedback visual */
 }
 
 .services-section {
